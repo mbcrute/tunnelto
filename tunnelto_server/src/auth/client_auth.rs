@@ -57,7 +57,8 @@ async fn auth_client(
                     }
                     (None, Some(sd)) => (
                         ClientId::generate(),
-                        ServerHello::prefixed_random_domain(&sd),
+                        // ServerHello::prefixed_random_domain(&sd),
+                        sd
                     ),
                     (None, None) => (ClientId::generate(), ServerHello::random_domain()),
                 };
